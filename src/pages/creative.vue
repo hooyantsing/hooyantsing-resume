@@ -3,7 +3,7 @@
     <div class="left-column">
       <div class="headline-photo">
         <img
-          src="https://cdn.jsdelivr.net/gh/lolipopj/resume/tree/ph-pages/photo.jpg"
+          src="https://cdn.jsdelivr.net/gh/lolipopj/resume/public/photo.jpg"
           class="headline-photo-img"
           alt="Absolutely myself"
         />
