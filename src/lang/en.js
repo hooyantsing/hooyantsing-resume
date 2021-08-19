@@ -9,6 +9,7 @@ const lang = {
   projects: "Projects",
   contributions: "Contributions",
   about: "About me",
+  awards: "Awards",
   internship: "INTERNSHIP",
   underDev: "DEV",
 };

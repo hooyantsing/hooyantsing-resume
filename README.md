@@ -2,6 +2,9 @@
 
 Based on brilliant project [best resume ever](https://github.com/salomonelli/best-resume-ever).
 
+- [中文简历](https://lolipopj.github.io/resume/cn)
+- [English resume](https://lolipopj.github.io/resume/en)
+
 ## Project setup
 
 ``` bash

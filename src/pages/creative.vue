@@ -317,12 +317,78 @@
 </template>
 
 <script>
-import Vue from "vue";
-import { getVueOptions } from "../options";
+import { personCN } from "@/resume/data-cn.yml";
+import { personEN } from "@/resume/data-en.yml";
+import { terms } from "@/terms";
+const yaml = require("js-yaml");
 
-const name = "creative";
+export default {
+  data() {
+    return {
+      person: undefined,
+      terms: terms,
+    };
+  },
+  computed: {
+    lang() {
+      const defaultLang = this.terms.cn;
+      const useLang = this.terms[this.person.lang];
 
-export default Vue.component(name, getVueOptions(name));
+      // overwrite non-set fields with default lang
+      Object.keys(defaultLang)
+        .filter((k) => !useLang[k])
+        .forEach((k) => {
+          console.log(k);
+          useLang[k] = defaultLang[k];
+        });
+
+      return useLang;
+    },
+
+    contactLinks() {
+      const links = {};
+
+      if (this.person.contact.github) {
+        links.github = `https://github.com/${this.person.contact.github}`;
+      }
+
+      if (this.person.contact.codefights) {
+        links.codefights = `https://codefights.com/profile/${this.person.contact.codefights}`;
+      }
+
+      if (this.person.contact.medium) {
+        links.medium = `https://medium.com/@${this.person.contact.medium}`;
+      }
+
+      if (this.person.contact.email) {
+        links.email = `mailto:${this.person.contact.email}`;
+      }
+
+      if (this.person.contact.linkedin) {
+        links.linkedin = `https://linkedin.com/in/${this.person.contact.linkedin}`;
+      }
+
+      if (this.person.contact.phone) {
+        links.phone = `tel:${this.person.contact.phone}`;
+      }
+
+      return links;
+    },
+  },
+  created() {
+    const language = this.$route.params.language;
+    switch (language) {
+      case "cn":
+        this.person = yaml.load(personCN);
+        break;
+      case "en":
+        this.person = yaml.load(personEN);
+        break;
+      default:
+        this.person = yaml.load(personCN);
+    }
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -639,6 +705,7 @@ a {
   }
 
   .headline-photo {
+    margin-top: unset;
     flex: 0 0 40%;
     border-radius: 16px;
   }
@@ -653,10 +720,6 @@ a {
 }
 
 @media (max-width: 600px) {
-  .headline-photo {
-    margin-top: unset;
-  }
-
   .section-content__item-grid {
     flex: 0 0 100%;
   }
@@ -664,6 +727,7 @@ a {
 
 @media (max-width: 440px) {
   .left-column {
+    min-height: 100vh;
     flex-direction: column;
   }
 

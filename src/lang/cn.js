@@ -2,6 +2,8 @@
 // Chinese (Simplified)
 const lang = {
   contact: "联系方式",
+  born: "出生",
+  bornIn: "于",
   experience: "工作经历",
   education: "教育经历",
   skills: "技能专长",

@@ -1,4 +1,4 @@
-/* #*/ export const PERSON = `
+/* #*/ export const personCN = `
 name:
   first: 宋
   middle:
@@ -8,9 +8,9 @@ position: 想要成为软件全栈开发工程师
 
 education:
 - school: 电子科技大学
-  degree: 软件工程（互联网“+”） 工学学士
+  degree: 工学学士
   timeperiod: 2018.09 - 2022.06
-  description: 电子科技大学（UESTC）软件工程专业本科生
+  description: 软件工程（互联网“+”）专业
   website: https://www.uestc.edu.cn
 
 skills:
@@ -97,20 +97,20 @@ contributions:
   platform: Vue
 
 awards:
-- name: 中国高校计算机大赛网络技术挑战赛 西南赛区一等奖
-  description: 2021 年；省区级
+- name: 2021 中国高校计算机大赛网络技术挑战赛 西南赛区一等奖
+  description: 省区级
   url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2021网络技术挑战赛.jpg
 
-- name: 中国大学生服务外包创新创业大赛 西部区域赛三等奖
-  description: 2021 年；省区级
+- name: 2021 中国大学生服务外包创新创业大赛 西部区域赛三等奖
+  description: 省区级
   url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2021中国大学生服务外包创新创业大赛.jpg
 
-- name: 中国高校计算机大赛微信小程序应用开发赛 西南赛区三等奖
-  description: 2020 年；省区级
+- name: 2020 中国高校计算机大赛微信小程序应用开发赛 西南赛区三等奖
+  description: 省区级
   url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2020微信小程序应用开发赛.png
 
-- name: 社会实践优秀个人
-  description: 2019 年；校级
+- name: 2019 社会实践优秀个人
+  description: 校级
   url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2019社会实践优秀个人.jpg
 
 contact:
@@ -120,6 +120,6 @@ contact:
   street: 四川省成都市
   website: https://blog.towind.fun
   github: LolipopJ
-# en, de, fr, pt, ca, cn, it, es, th, pt-br, ru, sv, id, hu, pl, ja, ka, nl, he, zh-tw, lt, ko, el, nb-no
+
 lang: cn
 `
