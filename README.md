@@ -2,9 +2,6 @@
 
 Based on brilliant project [best resume ever](https://github.com/salomonelli/best-resume-ever).
 
-- [中文简历](https://lolipopj.github.io/resume/cn)
-- [English resume](https://lolipopj.github.io/resume/en)
-
 ## Project setup
 
 ``` bash
@@ -27,6 +24,12 @@ yarn build
 
 ``` bash
 yarn lint
+```
+
+### Export resumes
+
+``` bash
+yarn export
 ```
 
 ### Customize configuration

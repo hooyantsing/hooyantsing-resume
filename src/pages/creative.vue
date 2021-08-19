@@ -1,5 +1,5 @@
 <template>
-  <div class="resume" id="resume2">
+  <div class="resume">
     <div class="left-column">
       <div class="headline-photo">
         <img
@@ -397,6 +397,7 @@ export default {
 .resume {
   display: flex;
   position: relative;
+  min-height: 100vh;
 }
 
 .left-column {
