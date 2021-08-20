@@ -21,8 +21,6 @@
 
             <p>
               <span class="txt-full-white"> {{ person.position }} </span>
-              <!-- <br/> -->
-              <!-- <span> {{ person.contact.city }} </span> -->
             </p>
           </div>
         </div>
@@ -44,32 +42,38 @@
         </div>
 
         <div class="social-container">
-          <a :href="contactLinks.email">
-            <div class="block-marged txt-full-white">
-              <i class="fas fa-envelope contact-icon"></i>
+          <a :href="contactLinks.email" class="block-marged left-column-items">
+            <i class="fas fa-envelope contact-icon"></i>
+            <span class="txt-full-white">
               {{ person.contact.email }}
-            </div>
+            </span>
           </a>
 
-          <div class="block-marged txt-full-white">
+          <div class="block-marged left-column-items">
             <i class="fas fa-phone-alt contact-icon"></i>
-            {{ person.contact.phone }}
+            <span class="txt-full-white">
+              {{ person.contact.phone }}
+            </span>
           </div>
 
-          <a v-if="person.contact.website" :href="person.contact.website">
-            <div class="block-marged txt-full-white">
-              <i class="fas fa-blog contact-icon"></i>
+          <a
+            v-if="person.contact.website"
+            :href="person.contact.website"
+            class="block-marged left-column-items"
+          >
+            <i class="fas fa-blog contact-icon"></i>
+            <span class="txt-full-white">
               {{ person.contact.website }}
-            </div>
+            </span>
           </a>
 
           <a
             v-if="person.contact.github"
             :href="contactLinks.github"
-            class="external-link"
+            class="block-marged left-column-items"
           >
             <i class="fab fa-github contact-icon"></i>
-            <span class="block-marged txt-full-white">
+            <span class="txt-full-white">
               {{ person.contact.github }}
             </span>
           </a>
@@ -77,7 +81,7 @@
           <a
             v-if="person.contact.codefights"
             :href="contactLinks.codefights"
-            class="external-link"
+            class="block-marged left-column-items"
           >
             <svg
               width="20"
@@ -90,7 +94,7 @@
               ></path>
             </svg>
 
-            <span class="block-marged txt-full-white">
+            <span class="txt-full-white">
               {{ person.contact.codefights }}
             </span>
           </a>
@@ -98,7 +102,7 @@
           <a
             v-if="person.contact.medium"
             :href="contactLinks.medium"
-            class="external-link"
+            class="left-column-items"
           >
             <i class="fab fa-medium contact-icon"></i>
             <span class="block-marged txt-full-white">
@@ -129,7 +133,7 @@
           <a
             v-if="exportMode === false"
             @click="switchThemeMode"
-            class="external-link"
+            class="block-marged left-column-items"
           >
             <i
               class="mdi contact-icon"
@@ -140,10 +144,7 @@
               "
               style="font-size: 1.4em"
             ></i>
-            <span
-              class="block-marged txt-full-white"
-              style="margin-left: -0.1em"
-            >
+            <span class="txt-full-white" style="margin-left: -0.1em">
               {{ themeMode === "light" ? lang.darkMode : lang.lightMode }}
             </span>
           </a>
@@ -151,16 +152,14 @@
           <router-link
             v-if="exportMode === false"
             :to="language === 'cn' ? '/en' : '/cn'"
-            class="external-link"
+            class="block-marged left-column-items"
+            style="margin-top: -10px"
           >
             <i
               class="mdi mdi-translate contact-icon"
               style="font-size: 1.4em"
             ></i>
-            <span
-              class="block-marged txt-full-white"
-              style="margin-left: -0.1em"
-            >
+            <span class="txt-full-white" style="margin-left: -0.1em">
               {{ lang.translate }}
             </span>
           </router-link>
@@ -464,6 +463,7 @@ export default {
 
     setThemeMode(mode) {
       this.themeMode = mode;
+      localStorage.preferredThemeMode = mode;
       document.documentElement.style.setProperty(
         "--theme-background-color",
         themes[mode].backgroundColor
@@ -477,10 +477,20 @@ export default {
         themes[mode].sectionTitleColor
       );
     },
+
+    getPreferredThemeMode() {
+      const preferredThemeMode =
+        localStorage.preferredThemeMode !== undefined
+          ? localStorage.preferredThemeMode
+          : window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      return preferredThemeMode === "dark" ? "dark" : "light";
+    },
   },
   created() {
     this.setResumeData(this.$route);
-    this.setThemeMode("light");
+    this.setThemeMode(this.getPreferredThemeMode());
   },
 };
 </script>
@@ -511,6 +521,12 @@ export default {
   z-index: 2;
 
   opacity: 1;
+
+  &-items {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
 }
 
 .headline-photo {
@@ -567,9 +583,6 @@ a {
   font-size: 1.3em;
   margin-right: 10px;
 
-  top: 2px;
-  position: relative;
-
   &-svg {
     margin-top: -2.5px;
     margin-right: 10px;
@@ -583,11 +596,6 @@ a {
       fill: white;
     }
   }
-}
-
-.external-link {
-  display: block;
-  margin-bottom: 5px;
 }
 
 .block-marged {
@@ -611,7 +619,7 @@ a {
 
   &-name {
     font-size: 1.3em;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 
@@ -627,6 +635,7 @@ a {
   color: var(--theme-section-title-color);
   transition: color @transition-timeperiod ease-out;
   display: inline-block;
+  font-weight: 700;
   font-size: 1.2em;
   margin-left: 5px;
 }
