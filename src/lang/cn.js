@@ -13,5 +13,6 @@ const lang = {
   awards: "获奖经历",
   internship: "实习",
   underDev: "开发中",
+  translate: "English resume",
 };
 export default lang;

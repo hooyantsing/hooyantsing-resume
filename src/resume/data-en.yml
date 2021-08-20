@@ -6,37 +6,14 @@ name:
 about: Responsible for and completed the full-stack development of 2 projects, and was responsible for or participated in the front-end development and design of multiple projects.
 position: way to be Software Full Stack Developer
 
+contact:
+  city: Chengdu
+  street: Chengdu, Sichuan Province
+
 education:
 - school: University of Electronic Science and Technology
   degree: Bachelor of Engineering
-  timeperiod: 2018.09 - 2022.06
   description: major in Software Engineering (Internet Plus)
-  website: https://www.uestc.edu.cn
-
-skills:
-- name: Vue
-  level: 85
-  iconClass: mdi-vuejs
-- name: JavaScript
-  level: 80
-  iconClass: mdi-language-javascript
-- name: Java
-  level: 80
-  iconClass: mdi-language-java
-- name: C/C++
-  level: 70
-  iconClass: mdi-language-c
-- name: Python
-  level: 70
-  iconClass: mdi-language-python
-- name: TypeScript
-  level: 60
-  iconClass: mdi-language-typescript
-- name: EJS
-  level: 60
-- name: Go
-  level: 60
-  iconClass: mdi-language-go
 
 welfare: Participated in education support and other public welfare activities; usually acted as the team leader in projects, with good overall planning, cooperation and communication skills.
 
@@ -45,81 +22,40 @@ schoolwork: Current GPA is 3.61, has passed CET-4 and CET-6, and won scholarship
 experience:
 - company: Huawei
   position: Cloud Computing Development Engineer
-  timeperiod: 2021.01 - 2021.07
   description: Storage business infrastructure project group, container platform group; responsible for refactoring and developing CDBI, building and deploying multiple independent verification environments, writing scripts, and writing several blogs; awarded as Star of Huawei Storage (top 20%)
-  website: https://www.huawei.com
-  internship: true
 
 projects:
-- name: netunion-dnrs-web
-  platform: Vue
-  description: Online repair system for dormitory network of UESTC; full-stack
-  url: https://github.com/uestclug/netunion-dnrs-web
+- description: Online repair system for dormitory network of UESTC; full-stack
 
-- name: nu-official
-  platform: Vue
-  description: Homepage of NetUnion, UESTC; full-stack
-  url: https://github.com/uestclug/nu-official
+- description: Homepage of NetUnion, UESTC; full-stack
 
-- name: home-action-client
-  platform: Vue
-  description: Home action client for contest; front-end
+- description: Home action client for contest; front-end
 
-- name: wxapp-ivory-tower-timetable
-  platform: WXML
-  description: Collaborative to-do program for college students driven by the curriculum; front-end
-  url: https://github.com/UESTC-cantdoit/wxapp-ivory-tower-timetable
+- description: Collaborative to-do program for college students driven by the curriculum; front-end
 
-- name: uestc-tvly-web
-  platform: Vue
-  description: IPTV front-end of UESTC; based on tvly-web, front-end
-  url: https://github.com/uestclug/uestc-tvly-web
-  dev: true
+- description: IPTV front-end of UESTC; based on tvly-web, front-end
 
-- name: lab-code-deployment-system-web
-  platform: Vue
-  description: Laboratory project deployment system that displays development results; full-stack
-  dev: true
+- description: Laboratory project deployment system that displays development results; full-stack
 
 contributions:
-- name: hexo-theme-archer
-  description: A modern Hexo blog theme; develop new features (such as dark mode), improve mobile adaptation, fix known issues -- help the theme become better
-  url: https://github.com/fi3ework/hexo-theme-archer
-  platform: EJS
+- description: A modern Hexo blog theme; develop new features (such as dark mode), improve mobile adaptation, fix known issues -- help the theme become better
 
-- name: design-patterns-for-humans-zh
-  description: Chinese translation for open source design pattern tutorial design-patterns-for-humans; self-translation, for learning reference
-  url: https://github.com/LolipopJ/design-patterns-for-humans-zh
+- description: Chinese translation for open source design pattern tutorial design-patterns-for-humans; self-translation, for learning reference
 
-- name: SOSCONF2020
-  description: 2020 Chinese Students Open Source Conference Homepage; front-end design of "About Us" and "Sub-venue" pages
-  url: https://gitlab.com/uestclug/sosconf_zh.gitlab.io
-  platform: Vue
+- description: 2020 Chinese Students Open Source Conference Homepage; front-end design of "About Us" and "Sub-venue" pages
 
 awards:
 - name: 2021 中国高校计算机大赛网络技术挑战赛 First Prize in Southwest Division
   description: Provincial level
-  url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2021网络技术挑战赛.jpg
 
 - name: 2021 中国大学生服务外包创新创业大赛 Third Prize of Western Regional Competition
   description: Provincial level
-  url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2021中国大学生服务外包创新创业大赛.jpg
 
 - name: 2020 中国高校计算机大赛微信小程序应用开发赛 Third Prize in Southwest Division
   description: Provincial level
-  url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2020微信小程序应用开发赛.png
 
 - name: 2019 Outstanding Individuals in Social Practice
   description: School level
-  url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2019社会实践优秀个人.jpg
-
-contact:
-  email: lolipop0703@qq.com
-  phone: +86 18980344225
-  city: Chengdu
-  street: Chengdu, Sichuan Province
-  website: https://blog.towind.fun
-  github: LolipopJ
 
 lang: en
 `

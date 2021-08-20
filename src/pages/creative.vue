@@ -105,6 +105,19 @@
               {{ person.contact.medium }}
             </span>
           </a>
+
+          <router-link
+            v-if="exportMode === false"
+            :to="language === 'cn' ? '/en' : '/cn'"
+            class="external-link"
+            style="margin-top: 10px"
+          >
+            <i class="mdi mdi-translate contact-icon"></i>
+            <span class="block-marged txt-full-white">
+              {{ lang.translate }}
+            </span>
+          </router-link>
+
           <div class="hobbies-container">
             <!-- <span class="subheadline">Hobbies</span> -->
             <div class="hobbies-content">
@@ -317,17 +330,27 @@
 </template>
 
 <script>
+const yaml = require("js-yaml");
+const object = require("lodash/fp/object");
+
+import { personDefault } from "@/resume/data-default.yml";
 import { personCN } from "@/resume/data-cn.yml";
 import { personEN } from "@/resume/data-en.yml";
 import { terms } from "@/terms";
-const yaml = require("js-yaml");
 
 export default {
   data() {
     return {
       person: undefined,
+      language: "cn",
+      exportMode: false,
       terms: terms,
     };
+  },
+  watch: {
+    $route(to) {
+      this.setResumeData(to);
+    },
   },
   computed: {
     lang() {
@@ -338,7 +361,6 @@ export default {
       Object.keys(defaultLang)
         .filter((k) => !useLang[k])
         .forEach((k) => {
-          console.log(k);
           useLang[k] = defaultLang[k];
         });
 
@@ -375,18 +397,35 @@ export default {
       return links;
     },
   },
+  methods: {
+    mergePerson(defaults, ...person) {
+      let mergedPerson = yaml.load(defaults);
+      person.forEach((p) => {
+        mergedPerson = object.merge(mergedPerson, yaml.load(p));
+      });
+      return mergedPerson;
+    },
+
+    setResumeData(routes) {
+      const language = routes.params.language || "cn";
+      const exportMode = routes.query.exportMode || false;
+
+      let person;
+      switch (language) {
+        case "en":
+          person = this.mergePerson(personDefault, personEN);
+          break;
+        default:
+          person = this.mergePerson(personDefault, personCN);
+      }
+
+      this.language = language;
+      this.exportMode = exportMode;
+      this.person = person;
+    },
+  },
   created() {
-    const language = this.$route.params.language;
-    switch (language) {
-      case "cn":
-        this.person = yaml.load(personCN);
-        break;
-      case "en":
-        this.person = yaml.load(personEN);
-        break;
-      default:
-        this.person = yaml.load(personCN);
-    }
+    this.setResumeData(this.$route);
   },
 };
 </script>
@@ -470,20 +509,20 @@ a {
 
   top: 2px;
   position: relative;
-}
 
-.contact-icon-svg {
-  margin-top: -2.5px;
-  margin-right: 10px;
+  &-svg {
+    margin-top: -2.5px;
+    margin-right: 10px;
 
-  transform: scale(1);
+    transform: scale(1);
 
-  top: 5px;
-  position: relative;
-}
+    top: 5px;
+    position: relative;
 
-.contact-icon-svg path {
-  fill: white;
+    path {
+      fill: white;
+    }
+  }
 }
 
 .external-link {
@@ -506,13 +545,15 @@ a {
   margin-bottom: 30px;
 }
 
-.headline-txt {
-  color: white;
-}
+.headline {
+  &-txt {
+    color: white;
+  }
 
-.headline-name {
-  font-size: 1.3em;
-  font-weight: bold;
+  &-name {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
 }
 
 .txt-full-white {
@@ -533,45 +574,66 @@ a {
 .section-content {
   margin-top: 10px;
   padding-left: 32px;
-}
 
-.section-content__item {
-  display: block;
-  margin-bottom: 10px;
+  &__item {
+    display: block;
+    margin-bottom: 10px;
+
+    &-grid {
+      flex: 0 0 48%;
+      margin-bottom: 10px;
+    }
+  }
 
   &-grid {
-    flex: 0 0 48%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin-top: 10px;
     margin-bottom: 10px;
+    padding-left: 32px;
+
+    &-skills {
+      justify-content: unset;
+    }
   }
-}
 
-.section-content-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  &__header {
+    display: block;
 
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 32px;
+    font-size: 1.1em;
+    font-weight: 500;
 
-  &-skills {
-    justify-content: unset;
+    &-inline {
+      display: inline-block;
+    }
+  }
+
+  &__subheader {
+    display: block;
+    font-weight: 400;
+  }
+
+  &__text {
+    display: block;
+    font-weight: 300;
+
+    &--light {
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: 300;
+    }
+  }
+
+  &__subheader,
+  &__text--light,
+  &__header {
+    line-height: 1.5em;
   }
 }
 
 .grid-item {
   padding-right: 20px;
-}
-
-.section-content__header {
-  display: block;
-
-  font-size: 1.1em;
-  font-weight: 500;
-
-  &-inline {
-    display: inline-block;
-  }
 }
 
 .squarred-grid-item {
@@ -595,27 +657,6 @@ a {
     background-color: transparent;
     color: @accent-color;
   }
-}
-
-.section-content__subheader {
-  display: block;
-  font-weight: 400;
-}
-
-.section-content__text {
-  display: block;
-  font-weight: 300;
-
-  &--light {
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: 300;
-  }
-}
-
-.section-content__subheader,
-.section-content__text--light,
-.section-content__header {
-  line-height: 1.5em;
 }
 
 .section {

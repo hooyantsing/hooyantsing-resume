@@ -4,7 +4,6 @@ const path = require("path");
 const fs = require("fs");
 
 const config = require("../config");
-
 const port = config.DEV_PORT || 8088;
 const defaultScreenshotWidth = config.EXPORT_SCREENSHOT_WIDTH || 1600;
 const defaultScreenshotHeight = config.EXPORT_SCREENSHOT_HEIGHT || 1000;
@@ -63,7 +62,7 @@ const convert = async function () {
       screenshotFullPage = true,
       screenshotQuality = 100,
     }) {
-      const url = `http://localhost:${port}/${code}`;
+      const url = `http://localhost:${port}/${code}?exportMode=true`;
       const filename = `resume-${code}`;
 
       const codeUpperCase = code.toUpperCase();

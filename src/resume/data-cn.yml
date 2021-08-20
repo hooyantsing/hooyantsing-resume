@@ -6,37 +6,14 @@ name:
 about: 作为主力完成了 2 个项目的全栈开发，负责或参与多个项目的前端开发设计。
 position: 想要成为软件全栈开发工程师
 
+contact:
+  city: 成都
+  street: 四川省成都市
+
 education:
 - school: 电子科技大学
   degree: 工学学士
-  timeperiod: 2018.09 - 2022.06
   description: 软件工程（互联网“+”）专业
-  website: https://www.uestc.edu.cn
-
-skills:
-- name: Vue
-  level: 85
-  iconClass: mdi-vuejs
-- name: JavaScript
-  level: 80
-  iconClass: mdi-language-javascript
-- name: Java
-  level: 80
-  iconClass: mdi-language-java
-- name: C/C++
-  level: 70
-  iconClass: mdi-language-c
-- name: Python
-  level: 70
-  iconClass: mdi-language-python
-- name: TypeScript
-  level: 60
-  iconClass: mdi-language-typescript
-- name: EJS
-  level: 60
-- name: Go
-  level: 60
-  iconClass: mdi-language-go
 
 welfare: 参加过支教等公益项目；开发中通常担当项目组长，具有不错的统筹安排、合作沟通能力。
 
@@ -45,81 +22,40 @@ schoolwork: 当前 GPA 为 3.61，已通过 CET-4 和 CET-6，在第一和第二
 experience:
 - company: 成都华为研究所
   position: 云计算开发工程师
-  timeperiod: 2021.01 - 2021.07
   description: 存储业务基础设施项目群容器平台组；负责重构开发 CDBI，搭建部署多个独立验证环境，编写部署脚本，撰写若干篇文档博客；获评优秀华储星（前 20%）
-  website: https://www.huawei.com
-  internship: true
 
 projects:
-- name: netunion-dnrs-web
-  platform: Vue
-  description: 电子科技大学宿舍网络在线报修系统；全栈开发
-  url: https://github.com/uestclug/netunion-dnrs-web
+- description: 电子科技大学宿舍网络在线报修系统；全栈开发
 
-- name: nu-official
-  platform: Vue
-  description: 电子科技大学 NetUnion 主页；全栈开发
-  url: https://github.com/uestclug/nu-official
+- description: 电子科技大学 NetUnion 主页；全栈开发
 
-- name: home-action-client
-  platform: Vue
-  description: 服务外包创新创业大赛归家行动客户端；前端开发
+- description: 服务外包创新创业大赛归家行动客户端；前端开发
 
-- name: wxapp-ivory-tower-timetable
-  platform: WXML
-  description: 由课程表驱动的大学生协作待办事项小程序；前端开发
-  url: https://github.com/UESTC-cantdoit/wxapp-ivory-tower-timetable
+- description: 由课程表驱动的大学生协作待办事项小程序；前端开发
 
-- name: uestc-tvly-web
-  platform: Vue
-  description: 电子科技大学 IPTV 前端；基于 tvly-web, 前端开发
-  url: https://github.com/uestclug/uestc-tvly-web
-  dev: true
+- description: 电子科技大学 IPTV 前端；基于 tvly-web, 前端开发
 
-- name: lab-code-deployment-system-web
-  platform: Vue
-  description: 实验室项目部署系统，展示实验室开发成果；全栈开发
-  dev: true
+- description: 实验室项目部署系统，展示实验室开发成果；全栈开发
 
 contributions:
-- name: hexo-theme-archer
-  description: 一款现代的 Hexo 博客主题；开发新功能（例如夜间模式），完善移动端页面适配，修复已知的问题，帮助主题变得更好
-  url: https://github.com/fi3ework/hexo-theme-archer
-  platform: EJS
+- description: 一款现代的 Hexo 博客主题；开发新功能（例如夜间模式），完善移动端页面适配，修复已知的问题，帮助主题变得更好
 
-- name: design-patterns-for-humans-zh
-  description: 开源设计模式教程仓库 design-patterns-for-humans 的中文翻译版本；自翻，供学习参考使用
-  url: https://github.com/LolipopJ/design-patterns-for-humans-zh
+- description: 开源设计模式教程仓库 design-patterns-for-humans 的中文翻译版本；自翻，供学习参考使用
 
-- name: SOSCONF2020
-  description: 2020 年中文学生开源年会主页；“关于我们”和“分会场”页面前端设计
-  url: https://gitlab.com/uestclug/sosconf_zh.gitlab.io
-  platform: Vue
+- description: 2020 年中文学生开源年会主页；“关于我们”和“分会场”页面前端设计
 
 awards:
 - name: 2021 中国高校计算机大赛网络技术挑战赛 西南赛区一等奖
   description: 省区级
-  url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2021网络技术挑战赛.jpg
 
 - name: 2021 中国大学生服务外包创新创业大赛 西部区域赛三等奖
   description: 省区级
-  url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2021中国大学生服务外包创新创业大赛.jpg
 
 - name: 2020 中国高校计算机大赛微信小程序应用开发赛 西南赛区三等奖
   description: 省区级
-  url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2020微信小程序应用开发赛.png
 
 - name: 2019 社会实践优秀个人
   description: 校级
-  url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2019社会实践优秀个人.jpg
-
-contact:
-  email: lolipop0703@qq.com
-  phone: +86 18980344225
-  city: 成都
-  street: 四川省成都市
-  website: https://blog.towind.fun
-  github: LolipopJ
 
 lang: cn
 `

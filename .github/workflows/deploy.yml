@@ -1,4 +1,4 @@
-name: Vuepress Deployment
+name: Resume Deployment
 
 on:
   push:
