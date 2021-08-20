@@ -5,6 +5,8 @@ const fs = require("fs");
 
 const config = require("../config");
 const port = config.DEV_PORT || 8088;
+
+// Note: SCREENSHOT_WIDTH and SCREENSHOT_HEIGHT will be used as browser viewport.
 const defaultScreenshotWidth = config.EXPORT_SCREENSHOT_WIDTH || 1600;
 const defaultScreenshotHeight = config.EXPORT_SCREENSHOT_HEIGHT || 1000;
 const defaultPdfWidth = config.EXPORT_PDF_WIDTH || 1600;
@@ -61,22 +63,19 @@ const convert = async function () {
       code = "cn",
       screenshotFullPage = true,
       screenshotQuality = 100,
+      autoFitPdf = true,
     }) {
+      const filename = `resume-${code}`;
+      const codeUpperCase = code.toUpperCase();
       const url = `http://localhost:${port}/#/${code}?exportMode=true`;
       console.log(`Export resume: ${url} ...`);
-      const filename = `resume-${code}`;
 
-      const codeUpperCase = code.toUpperCase();
       const screenshotWidth =
         config[`EXPORT_SCREENSHOT_WIDTH_${codeUpperCase}`] ||
         defaultScreenshotWidth;
       const screenshotHeight =
         config[`EXPORT_SCREENSHOT_HEIGHT_${codeUpperCase}`] ||
         defaultScreenshotHeight;
-      const pdfWidth =
-        config[`EXPORT_PDF_WIDTH_${codeUpperCase}`] || defaultPdfWidth;
-      const pdfHeight =
-        config[`EXPORT_PDF_HEIGHT_${codeUpperCase}`] || defaultPdfHeight;
 
       const browser = await puppeteer.launch({
         args: ["--no-sandbox"],
@@ -97,6 +96,25 @@ const convert = async function () {
         fullPage: screenshotFullPage,
         quality: screenshotQuality,
       });
+
+      const pdfWidth =
+        config[`EXPORT_PDF_WIDTH_${codeUpperCase}`] || defaultPdfWidth;
+      const pdfHeight = autoFitPdf
+        ? await page.evaluate(() => {
+            const body = document.body,
+              html = document.documentElement;
+
+            const pageHeight = Math.max(
+              body.scrollHeight,
+              body.offsetHeight,
+              html.clientHeight,
+              html.scrollHeight,
+              html.offsetHeight
+            );
+
+            return pageHeight + 10;
+          })
+        : config[`EXPORT_PDF_HEIGHT_${codeUpperCase}`] || defaultPdfHeight;
 
       console.log(
         `Resume screenshot is exported to: ${savePath}${filename}.jpeg`
