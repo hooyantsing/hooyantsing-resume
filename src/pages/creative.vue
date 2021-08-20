@@ -105,224 +105,255 @@
               {{ person.contact.medium }}
             </span>
           </a>
+        </div>
+
+        <!-- <div class="hobbies-container">
+          <span class="subheadline">Hobbies</span>
+          <div class="hobbies-content">
+            <a
+              v-for="(hobby, index) in person.hobbies"
+              :key="index"
+              class="hobby-item"
+              :href="hobby.url"
+            >
+              <i
+                v-if="hobby.iconClass"
+                :class="hobby.iconClass + ' hobby-item__icon'"
+              ></i>
+              <span class="hobby-item__icon-label"> {{ hobby.name }} </span>
+            </a>
+          </div>
+        </div> -->
+
+        <div class="actions-container">
+          <a
+            v-if="exportMode === false"
+            @click="switchThemeMode"
+            class="external-link"
+          >
+            <i
+              class="mdi contact-icon"
+              :class="
+                themeMode === 'light'
+                  ? 'mdi-weather-night'
+                  : 'mdi-weather-sunny'
+              "
+              style="font-size: 1.4em"
+            ></i>
+            <span
+              class="block-marged txt-full-white"
+              style="margin-left: -0.1em"
+            >
+              {{ themeMode === "light" ? lang.darkMode : lang.lightMode }}
+            </span>
+          </a>
 
           <router-link
             v-if="exportMode === false"
             :to="language === 'cn' ? '/en' : '/cn'"
             class="external-link"
-            style="margin-top: 10px"
           >
-            <i class="mdi mdi-translate contact-icon"></i>
-            <span class="block-marged txt-full-white">
+            <i
+              class="mdi mdi-translate contact-icon"
+              style="font-size: 1.4em"
+            ></i>
+            <span
+              class="block-marged txt-full-white"
+              style="margin-left: -0.1em"
+            >
               {{ lang.translate }}
             </span>
           </router-link>
-
-          <div class="hobbies-container">
-            <!-- <span class="subheadline">Hobbies</span> -->
-            <div class="hobbies-content">
-              <a
-                v-for="(hobby, index) in person.hobbies"
-                :key="index"
-                class="hobby-item"
-                :href="hobby.url"
-              >
-                <i
-                  v-if="hobby.iconClass"
-                  :class="hobby.iconClass + ' hobby-item__icon'"
-                ></i>
-                <span class="hobby-item__icon-label"> {{ hobby.name }} </span>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
 
     <div class="right-column">
-      <div class="right-column-section">
-        <div class="experience-section section">
-          <div class="icon">
-            <i class="fas fa-briefcase font-awesome-icons"></i>
-            <span class="section-headline">{{ lang.experience }}</span>
-          </div>
-
-          <div class="section-content">
-            <a
-              v-for="(experience, index) in person.experience"
-              :key="index"
-              class="section-content__item"
-              :href="experience.website"
-            >
-              <div>
-                <span
-                  class="
-                    section-content__header
-                    .section-content__header-inline
-                  "
-                >
-                  {{ experience.position }}
-                  <span
-                    v-if="experience.internship"
-                    class="chip chip-secondary"
-                  >
-                    {{ lang.internship }}
-                  </span>
-                </span>
-              </div>
-              <span class="section-content__subheader">
-                {{ experience.company }}</span
-              >
-              <div class="section-content__text">
-                {{ experience.timeperiod }}
-              </div>
-              <span class="section-content__text--light">
-                {{ experience.description }}</span
-              >
-            </a>
-          </div>
+      <!-- Experience -->
+      <div class="experience-section section">
+        <div class="icon">
+          <i class="fas fa-briefcase font-awesome-icons"></i>
+          <span class="section-headline">{{ lang.experience }}</span>
         </div>
 
-        <div class="education-section section">
-          <div class="icon">
-            <i class="fas fa-graduation-cap font-awesome-icons"></i>
-            <span class="section-headline">{{ lang.education }}</span>
-          </div>
-
-          <div class="section-content">
-            <a
-              v-for="(education, index) in person.education"
-              :key="index"
-              class="section-content__item"
-              :href="education.website"
-            >
-              <span class="section-content__header">
-                {{ education.school }}
+        <div class="section-content">
+          <a
+            v-for="(experience, index) in person.experience"
+            :key="index"
+            class="section-content__item"
+            :href="experience.website"
+          >
+            <div class="section-content__header section-content__header-flex">
+              {{ experience.position }}
+              <span v-if="experience.internship" class="chip chip-secondary">
+                {{ lang.internship }}
               </span>
-              <span class="section-content__subheader">{{
-                education.degree
-              }}</span>
-              <span class="section-content__text">
-                {{ education.timeperiod }}
-              </span>
-              <span class="section-content__text--light">
-                {{ education.description }}
-              </span>
-            </a>
-          </div>
-        </div>
-
-        <div v-if="person.projects" class="projects-section section">
-          <div class="icon">
-            <i class="fas fa-code font-awesome-icons"></i>
-            <span class="section-headline"> {{ lang.projects }} </span>
-          </div>
-
-          <div class="section-content">
-            <a
-              v-for="(project, index) in person.projects"
-              :key="index"
-              class="section-content__item"
-              :href="project.url"
-            >
-              <div>
-                <span
-                  class="section-content__header section-content__header-inline"
-                >
-                  {{ project.name }}
-                </span>
-                <span v-if="project.platform" class="chip">{{
-                  project.platform
-                }}</span>
-                <span v-if="project.dev" class="chip chip-secondary">
-                  {{ lang.underDev }}
-                </span>
-              </div>
-              <span class="section-content__text">
-                {{ project.description }}
-              </span>
-              <span class="section-content__text--light">
-                {{ project.url }}
-              </span>
-            </a>
-          </div>
+            </div>
+            <div class="section-content__subheader">
+              {{ experience.company }}
+            </div>
+            <div class="section-content__text">
+              {{ experience.timeperiod }}
+            </div>
+            <div class="section-content__text">
+              {{ experience.description }}
+            </div>
+            <div class="section-content__text--light">
+              {{ experience.website }}
+            </div>
+          </a>
         </div>
       </div>
-      <div class="right-column-section">
-        <div v-if="person.contributions" class="contributions-section section">
-          <div class="icon">
-            <i class="fa fa-heart font-awesome-icons"></i>
-            <span class="section-headline"> {{ lang.contributions }} </span>
-          </div>
 
-          <div class="section-content-grid">
-            <a
-              v-for="(contribution, index) in person.contributions"
-              :key="index"
-              :href="contribution.url"
-              class="section-content__item"
-            >
-              <div>
-                <span
-                  class="section-content__header section-content__header-inline"
-                >
-                  {{ contribution.name }}
-                </span>
-                <span v-if="contribution.platform" class="chip">{{
-                  contribution.platform
-                }}</span>
-              </div>
-              <span class="section-content__text">
-                {{ contribution.description }}
-              </span>
-              <span
-                class="section-content__text--light"
-                style="word-break: break-all"
-              >
-                {{ contribution.url }}
-              </span>
-            </a>
-          </div>
+      <!-- Education -->
+      <div class="education-section section">
+        <div class="icon">
+          <i class="fas fa-graduation-cap font-awesome-icons"></i>
+          <span class="section-headline">{{ lang.education }}</span>
         </div>
-        <div v-if="person.awards" class="contributions-section section">
-          <div class="icon">
-            <i class="fa fa-trophy font-awesome-icons"></i>
-            <span class="section-headline"> {{ lang.awards }} </span>
-          </div>
 
-          <div class="section-content-grid">
-            <a
-              v-for="(award, index) in person.awards"
-              :key="index"
-              class="section-content__item-grid"
-              :href="award.url"
-            >
-              <span class="section-content__header"> {{ award.name }} </span>
-              <span class="section-content__text">
-                {{ award.description }}
-              </span>
-            </a>
-          </div>
+        <div class="section-content">
+          <a
+            v-for="(education, index) in person.education"
+            :key="index"
+            class="section-content__item"
+            :href="education.website"
+          >
+            <div class="section-content__header">
+              {{ education.school }}
+            </div>
+            <div class="section-content__subheader">
+              {{ education.major }} {{ education.degree }}
+            </div>
+            <div class="section-content__text">
+              {{ education.timeperiod }}
+            </div>
+            <div class="section-content__text">
+              {{ education.description }}
+            </div>
+            <div class="section-content__text--light">
+              {{ education.website }}
+            </div>
+          </a>
         </div>
-        <div v-if="person.skills" class="skills-section section">
-          <div class="icon">
-            <i class="fas fa-coffee font-awesome-icons"></i>
-            <span class="section-headline"> {{ lang.skills }} </span>
-          </div>
+      </div>
 
-          <div class="section-content-grid section-content-grid-skills">
-            <span
-              v-for="(skill, index) in person.skills"
-              :key="index"
-              class="grid-item"
-              :href="skill.url"
-            >
-              <span class="squarred-grid-item">
-                <i v-if="skill.iconClass" :class="'mdi ' + skill.iconClass"></i>
-                {{ skill.name }}
+      <!-- Projects -->
+      <div v-if="person.projects" class="projects-section section">
+        <div class="icon">
+          <i class="fas fa-code font-awesome-icons"></i>
+          <span class="section-headline"> {{ lang.projects }} </span>
+        </div>
+
+        <div class="section-content">
+          <a
+            v-for="(project, index) in person.projects"
+            :key="index"
+            class="section-content__item"
+            :href="project.url"
+          >
+            <div class="section-content__header section-content__header-flex">
+              {{ project.name }}
+              <span v-if="project.platform" class="chip">
+                {{ project.platform }}
               </span>
-            </span>
-          </div>
+              <span v-if="project.dev" class="chip chip-secondary">
+                {{ lang.underDev }}
+              </span>
+            </div>
+            <div class="section-content__subheader">
+              {{ project.shortIntro }}
+            </div>
+            <div class="section-content__text">
+              {{ project.description }}
+            </div>
+            <div class="section-content__text--light">
+              {{ project.url }}
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contributions -->
+      <div v-if="person.contributions" class="contributions-section section">
+        <div class="icon">
+          <i class="fa fa-heart font-awesome-icons"></i>
+          <span class="section-headline"> {{ lang.contributions }} </span>
+        </div>
+
+        <div class="section-content">
+          <a
+            v-for="(contribution, index) in person.contributions"
+            :key="index"
+            :href="contribution.url"
+            class="section-content__item"
+          >
+            <div class="section-content__header section-content__header-flex">
+              {{ contribution.name }}
+              <span v-if="contribution.platform" class="chip">{{
+                contribution.platform
+              }}</span>
+            </div>
+            <div class="section-content__subheader">
+              {{ contribution.shortIntro }}
+            </div>
+            <div class="section-content__text">
+              {{ contribution.description }}
+            </div>
+            <div class="section-content__text--light">
+              {{ contribution.url }}
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Awards -->
+      <div v-if="person.awards" class="contributions-section section">
+        <div class="icon">
+          <i class="fa fa-trophy font-awesome-icons"></i>
+          <span class="section-headline"> {{ lang.awards }} </span>
+        </div>
+
+        <div class="section-content-grid">
+          <a
+            v-for="(award, index) in person.awards"
+            :key="index"
+            class="section-content__item-grid"
+            :href="award.url"
+          >
+            <div class="section-content__header">{{ award.name }}</div>
+            <div class="section-content__subheader">
+              {{ award.award }}
+            </div>
+            <div class="section-content__text">
+              {{ award.description }}
+            </div>
+            <div class="section-content__text--light">
+              {{ award.grade }}
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div v-if="person.skills" class="skills-section section">
+        <div class="icon">
+          <i class="fas fa-coffee font-awesome-icons"></i>
+          <span class="section-headline"> {{ lang.skills }} </span>
+        </div>
+
+        <div class="section-content-grid section-content-grid-skills">
+          <span
+            v-for="(skill, index) in person.skills"
+            :key="index"
+            class="grid-item"
+            :href="skill.url"
+          >
+            <div class="squarred-grid-item">
+              <i v-if="skill.iconClass" :class="'mdi ' + skill.iconClass"></i>
+              {{ skill.name }}
+            </div>
+          </span>
         </div>
       </div>
     </div>
@@ -332,6 +363,8 @@
 <script>
 const yaml = require("js-yaml");
 const object = require("lodash/fp/object");
+
+const themes = require("@/assets/themes");
 
 import { personDefault } from "@/resume/data-default.yml";
 import { personCN } from "@/resume/data-cn.yml";
@@ -344,6 +377,7 @@ export default {
       person: undefined,
       language: "cn",
       exportMode: false,
+      themeMode: "light",
       terms: terms,
     };
   },
@@ -423,20 +457,44 @@ export default {
       this.exportMode = exportMode;
       this.person = person;
     },
+
+    switchThemeMode() {
+      this.setThemeMode(this.themeMode === "light" ? "dark" : "light");
+    },
+
+    setThemeMode(mode) {
+      this.themeMode = mode;
+      document.documentElement.style.setProperty(
+        "--theme-background-color",
+        themes[mode].backgroundColor
+      );
+      document.documentElement.style.setProperty(
+        "--theme-text-color",
+        themes[mode].textColor
+      );
+      document.documentElement.style.setProperty(
+        "--theme-section-title-color",
+        themes[mode].sectionTitleColor
+      );
+    },
   },
   created() {
     this.setResumeData(this.$route);
+    this.setThemeMode("light");
   },
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 @accent-color: #0a7074;
+@transition-timeperiod: 0.3s;
 
 .resume {
   display: flex;
   position: relative;
   min-height: 100vh;
+  color: var(--theme-text-color);
+  transition: color @transition-timeperiod ease-out;
 }
 
 .left-column {
@@ -472,13 +530,14 @@ export default {
 
 .right-column {
   flex: 3;
-  display: flex;
-  justify-content: space-around;
-  padding: 30px;
+  background-color: var(--theme-background-color);
+  transition: background-color @transition-timeperiod ease-out;
 
-  &-section {
-    flex: 0 0 48%;
-  }
+  display: block;
+  column-count: 2;
+  column-gap: 4%;
+
+  padding: 30px;
 }
 
 a {
@@ -492,7 +551,8 @@ a {
 }
 
 .font-awesome-icons {
-  color: @accent-color;
+  color: var(--theme-section-title-color);
+  transition: color @transition-timeperiod ease-out;
   font-size: 1.3em;
   margin-right: 6px;
 }
@@ -542,7 +602,6 @@ a {
 
 .social-container {
   margin-top: 30px;
-  margin-bottom: 30px;
 }
 
 .headline {
@@ -565,7 +624,8 @@ a {
 }
 
 .section-headline {
-  color: @accent-color;
+  color: var(--theme-section-title-color);
+  transition: color @transition-timeperiod ease-out;
   display: inline-block;
   font-size: 1.2em;
   margin-left: 5px;
@@ -578,10 +638,12 @@ a {
   &__item {
     display: block;
     margin-bottom: 10px;
+    break-inside: avoid;
 
     &-grid {
-      flex: 0 0 48%;
+      flex: 0 0 100%;
       margin-bottom: 10px;
+      break-inside: avoid;
     }
   }
 
@@ -605,8 +667,9 @@ a {
     font-size: 1.1em;
     font-weight: 500;
 
-    &-inline {
-      display: inline-block;
+    &-flex {
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -620,14 +683,17 @@ a {
     font-weight: 300;
 
     &--light {
-      color: rgba(0, 0, 0, 0.5);
+      display: block;
       font-weight: 300;
+      opacity: 0.6;
+      word-break: break-all;
     }
   }
 
+  &__header,
   &__subheader,
-  &__text--light,
-  &__header {
+  &__text,
+  &__text--light {
     line-height: 1.5em;
   }
 }
@@ -650,7 +716,7 @@ a {
 
   vertical-align: middle;
 
-  transition: all 0.3s ease-out;
+  transition: all @transition-timeperiod ease-out;
 
   &:hover {
     cursor: default;
@@ -665,7 +731,6 @@ a {
 }
 
 .lang-icon {
-  color: rgba(0, 0, 0, 0.7);
   font-size: 3em;
 
   &:hover {
@@ -691,11 +756,11 @@ a {
   margin-right: 25px;
   margin-bottom: 10px;
 
-  transition: 0.5s;
+  transition: @transition-timeperiod;
 
   &:hover {
     color: rgba(255, 255, 255, 0.8);
-    transition: 0.5s;
+    transition: @transition-timeperiod;
   }
 
   &__icon {
@@ -708,6 +773,10 @@ a {
   }
 }
 
+.actions-container {
+  margin-top: 30px;
+}
+
 .subheadline {
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.2em;
@@ -717,10 +786,8 @@ a {
 }
 
 .chip {
-  display: inline-block;
   color: white;
   background-color: @accent-color;
-  overflow: hidden;
   vertical-align: middle;
   padding: 5px;
   margin-left: 5px;
@@ -758,16 +825,16 @@ a {
 
   .right-column {
     flex-direction: column;
+
+    column-count: 1;
+  }
+
+  .section-content__item-grid {
+    flex: 0 0 48%;
   }
 }
 
 @media (max-width: 600px) {
-  .section-content__item-grid {
-    flex: 0 0 100%;
-  }
-}
-
-@media (max-width: 440px) {
   .left-column {
     min-height: 100vh;
     flex-direction: column;
@@ -780,6 +847,10 @@ a {
 
   .headline-txt {
     text-align: center;
+  }
+
+  .section-content__item-grid {
+    flex: 0 0 100%;
   }
 }
 </style>

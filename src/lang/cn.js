@@ -14,5 +14,7 @@ const lang = {
   internship: "实习",
   underDev: "开发中",
   translate: "English resume",
+  lightMode: "日间模式",
+  darkMode: "夜间模式",
 };
 export default lang;

@@ -30,12 +30,12 @@ projects:
   platform: WXML
   url: https://github.com/UESTC-cantdoit/wxapp-ivory-tower-timetable
 
-- name: uestc-tvly-web
-  platform: Vue
-  url: https://github.com/uestclug/uestc-tvly-web
+- name: tvly-react
+  platform: React
+  url: https://github.com/LolipopJ/tvly-react
   dev: true
 
-- name: lab-code-deployment-system-web
+- name: lab-code-deployment-system
   platform: Vue
   dev: true
 

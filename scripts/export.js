@@ -62,7 +62,8 @@ const convert = async function () {
       screenshotFullPage = true,
       screenshotQuality = 100,
     }) {
-      const url = `http://localhost:${port}/${code}?exportMode=true`;
+      const url = `http://localhost:${port}/#/${code}?exportMode=true`;
+      console.log(`Export resume: ${url} ...`);
       const filename = `resume-${code}`;
 
       const codeUpperCase = code.toUpperCase();
@@ -97,11 +98,17 @@ const convert = async function () {
         quality: screenshotQuality,
       });
 
+      console.log(
+        `Resume screenshot is exported to: ${savePath}${filename}.jpeg`
+      );
+
       await page.pdf({
         path: `${savePath}${filename}.pdf`,
         width: pdfWidth,
         height: pdfHeight,
       });
+
+      console.log(`Resume PDF is exported to: ${savePath}${filename}.pdf`);
 
       await browser.close();
     };

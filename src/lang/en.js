@@ -13,5 +13,7 @@ const lang = {
   internship: "INTERNSHIP",
   underDev: "DEV",
   translate: "中文简历",
+  lightMode: "Light Mode",
+  darkMode: "Dark Mode",
 };
 export default lang;

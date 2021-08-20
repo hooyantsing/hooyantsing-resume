@@ -13,7 +13,7 @@ contact:
 education:
 - school: University of Electronic Science and Technology
   degree: Bachelor of Engineering
-  description: major in Software Engineering (Internet Plus)
+  major: Software Engineering (Internet Plus)
 
 welfare: Participated in education support and other public welfare activities; usually acted as the team leader in projects, with good overall planning, cooperation and communication skills.
 
@@ -25,37 +25,49 @@ experience:
   description: Storage business infrastructure project group, container platform group; responsible for refactoring and developing CDBI, building and deploying multiple independent verification environments, writing scripts, and writing several blogs; awarded as Star of Huawei Storage (top 20%)
 
 projects:
-- description: Online repair system for dormitory network of UESTC; full-stack
+- shortIntro: Online repair system for dormitory network of UESTC
+  description: Internet users can submit repair orders online and track the progress of them. Solvers can accept orders, add processing information, and view order operation logs. Full stack
 
-- description: Homepage of NetUnion, UESTC; full-stack
+- shortIntro: Official website for NetUnion, UESTC
+  description: Use Markdown to write news and blogs, provide navigation links to various services, and better show the elegant demeanor of the NetUnion team. The design refers to the official website of Tsinghua University TUNA Association. Full stack
 
-- description: Home action client for contest; front-end
+- shortIntro: Client for Home Action
+  description: A client designed for the families of lost elderly people and volunteers looking for the lost. Use Lark for information synchronization and intelligence aggregation. Front-end
 
-- description: Collaborative to-do program for college students driven by the curriculum; front-end
+- shortIntro: 「Ivory Tower Timetable」
+  description: A WeChat Mini Program for Collaborative To-Do Affairs for College Students Driven by the Curriculum. Join the class, share the schedule, to-do affairs and public affairs with your classmates. Front-end
 
-- description: IPTV front-end of UESTC; based on tvly-web, front-end
+- shortIntro: IPTV front-end of UESTC
+  description: Provide IPTV services to students on campus. Based on tvly/tvly-web and uestclug/uestc-tvly-web, using React refactoring. Front-end, under development
 
-- description: Laboratory project deployment system that displays development results; full-stack
+- shortIntro: Laboratory project deployment system
+  description:  Provide a unified platform and writing templates, standardize input and output, to display laboratory development results visually. Full stack, under development
 
 contributions:
-- description: A modern Hexo blog theme; develop new features (such as dark mode), improve mobile adaptation, fix known issues -- help the theme become better
+- shortIntro: A modern Hexo blog theme
+  description: Develop new features (such as dark mode), improve mobile adaptation, fix known issues -- help the theme become better
 
-- description: Chinese translation for open source design pattern tutorial design-patterns-for-humans; self-translation, for learning reference
+- shortIntro: 「Design Pattern Tutorial for Chinese Readers」
+  description: The Chinese translation version of the open source tutorial design-patterns-for-humans, for reference in learning design patterns
 
-- description: 2020 Chinese Students Open Source Conference Homepage; front-end design of "About Us" and "Sub-venue" pages
+- shortIntro: Official website for 2020 Students Open Source Conference of Chinese
+  description: Front-end design of 「About Us」 and 「Sub-venue」 pages
 
 awards:
-- name: 2021 中国高校计算机大赛网络技术挑战赛 First Prize in Southwest Division
-  description: Provincial level
+- name: 2021 中国高校计算机大赛网络技术挑战赛
+  award: First Prize in Southwest Division
+  grade: Provincial level
 
-- name: 2021 中国大学生服务外包创新创业大赛 Third Prize of Western Regional Competition
-  description: Provincial level
+- name: 2021 中国大学生服务外包创新创业大赛
+  award: Third Prize of Western Regional Competition
+  grade: Provincial level
 
-- name: 2020 中国高校计算机大赛微信小程序应用开发赛 Third Prize in Southwest Division
-  description: Provincial level
+- name: 2020 中国高校计算机大赛微信小程序应用开发赛
+  award: Third Prize in Southwest Division
+  grade: Provincial level
 
 - name: 2019 Outstanding Individuals in Social Practice
-  description: School level
+  grade: School level
 
 lang: en
 `
