@@ -490,7 +490,9 @@ export default {
   },
   created() {
     this.setResumeData(this.$route);
-    this.setThemeMode(this.getPreferredThemeMode());
+    this.exportMode === true
+      ? this.setThemeMode("light")
+      : this.setThemeMode(this.getPreferredThemeMode());
   },
 };
 </script>
