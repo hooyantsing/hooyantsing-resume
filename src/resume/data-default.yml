@@ -19,9 +19,9 @@ projects:
   platform: Vue
   url: https://github.com/uestclug/netunion-dnrs-web
 
-- name: nu-official
+- name: lug-official
   platform: Vue
-  url: https://github.com/uestclug/nu-official
+  url: https://github.com/uestclug/lug-official
 
 - name: home-action-client
   platform: Vue
@@ -67,21 +67,9 @@ skills:
 - name: JavaScript
   level: 80
   iconClass: mdi-language-javascript
-- name: Java
-  level: 80
-  iconClass: mdi-language-java
-- name: C/C++
-  level: 70
-  iconClass: mdi-language-c
-- name: Python
-  level: 70
-  iconClass: mdi-language-python
 - name: TypeScript
   level: 60
   iconClass: mdi-language-typescript
 - name: EJS
   level: 60
-- name: Go
-  level: 60
-  iconClass: mdi-language-go
 `

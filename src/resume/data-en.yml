@@ -28,8 +28,8 @@ projects:
 - shortIntro: Online repair system for dormitory network of UESTC
   description: Internet users can submit repair orders online and track the progress of them. Solvers can accept orders, add processing information, and view order operation logs. Full stack
 
-- shortIntro: Official website for NetUnion, UESTC
-  description: Use Markdown to write news and blogs, provide navigation links to various services, and better show the elegant demeanor of the NetUnion team. The design refers to the official website of Tsinghua University TUNA Association. Full stack
+- shortIntro: Official website for LUG, UESTC
+  description: Use Markdown to write news and blogs, provide navigation links to various services, and better show the elegant demeanor of the LUG team. The design refers to the official website of Tsinghua University TUNA Association. Full stack
 
 - shortIntro: Client for Home Action
   description: A client designed for the families of lost elderly people and volunteers looking for the lost. Use Lark for information synchronization and intelligence aggregation. Front-end

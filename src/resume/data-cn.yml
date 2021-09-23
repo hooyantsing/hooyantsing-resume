@@ -28,8 +28,8 @@ projects:
 - shortIntro: 电子科技大学宿舍网络在线报修系统
   description: 网络用户可以在线提交报修订单并追踪订单进行状况，处理人员能够接取订单，添加处理信息以及查看订单操作日志等。全栈开发
 
-- shortIntro: 电子科技大学 NetUnion 主页
-  description: 使用 Markdown 编写新闻和博客，提供各种服务的导航链接，更好地展现 NetUnion 团队的风采。设计参考清华大学 TUNA 协会官网。全栈开发
+- shortIntro: 电子科技大学 LUG 主页
+  description: 使用 Markdown 编写新闻和博客，提供各种服务的导航链接，更好地展现 LUG 团队的风采。设计参考清华大学 TUNA 协会官网。全栈开发
 
 - shortIntro: 归家行动客户端
   description: 面向走失老人的家属和寻找走失老人的志愿者设计的客户端。家属能够查看搜救进展，标注老人常去地点等；志愿者可以查看队员位置，设置搜索区域和添加备注等；使用飞书进行信息同步和情报汇总。前端开发
