@@ -68,15 +68,19 @@ skills:
 - name: React
   level: 75
   iconClass: mdi-react
+  url: https://reactjs.org
 
 - name: Vue
   level: 75
   iconClass: mdi-vuejs
+  url: https://vuejs.org
 
 - name: TypeScript
   level: 70
   iconClass: mdi-language-typescript
+  url: https://www.typescriptlang.org
 
 - name: EJS
   level: 60
+  url: https://ejs.co
 `

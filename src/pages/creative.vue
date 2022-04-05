@@ -176,11 +176,12 @@
         </div>
 
         <div class="section-content">
-          <a
+          <div
             v-for="(experience, index) in person.experience"
             :key="index"
             class="section-content__item"
-            :href="experience.website"
+            :class="experience.website ? '' : 'un-clickable'"
+            @click="openWindow(experience.website)"
           >
             <div class="section-content__header section-content__header-flex">
               {{ experience.position }}
@@ -200,7 +201,7 @@
             <div class="section-content__text--light">
               {{ experience.website }}
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
@@ -212,11 +213,12 @@
         </div>
 
         <div class="section-content">
-          <a
+          <div
             v-for="(education, index) in person.education"
             :key="index"
             class="section-content__item"
-            :href="education.website"
+            :class="education.website ? '' : 'un-clickable'"
+            @click="openWindow(education.website)"
           >
             <div class="section-content__header">
               {{ education.school }}
@@ -233,7 +235,7 @@
             <div class="section-content__text--light">
               {{ education.website }}
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
@@ -245,11 +247,12 @@
         </div>
 
         <div class="section-content">
-          <a
+          <div
             v-for="(project, index) in person.projects"
             :key="index"
             class="section-content__item"
-            :href="project.url"
+            :class="project.url ? '' : 'un-clickable'"
+            @click="openWindow(project.url)"
           >
             <div class="section-content__header section-content__header-flex">
               {{ project.name }}
@@ -269,7 +272,7 @@
             <div class="section-content__text--light">
               {{ project.url }}
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
@@ -281,11 +284,12 @@
         </div>
 
         <div class="section-content">
-          <a
+          <div
             v-for="(contribution, index) in person.contributions"
             :key="index"
-            :href="contribution.url"
             class="section-content__item"
+            :class="contribution.url ? '' : 'un-clickable'"
+            @click="openWindow(contribution.url)"
           >
             <div class="section-content__header section-content__header-flex">
               {{ contribution.name }}
@@ -302,7 +306,7 @@
             <div class="section-content__text--light">
               {{ contribution.url }}
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
@@ -314,11 +318,12 @@
         </div>
 
         <div class="section-content-grid">
-          <a
+          <div
             v-for="(award, index) in person.awards"
             :key="index"
             class="section-content__item-grid"
-            :href="award.url"
+            :class="award.url ? '' : 'un-clickable'"
+            @click="openWindow(award.url)"
           >
             <div class="section-content__header">{{ award.name }}</div>
             <div class="section-content__subheader">
@@ -330,7 +335,7 @@
             <div class="section-content__text--light">
               {{ award.grade }}
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
@@ -346,9 +351,12 @@
             v-for="(skill, index) in person.skills"
             :key="index"
             class="grid-item"
-            :href="skill.url"
           >
-            <div class="squarred-grid-item">
+            <div
+              class="squarred-grid-item"
+              :class="skill.url ? '' : 'un-clickable'"
+              @click="openWindow(skill.url)"
+            >
               <i v-if="skill.iconClass" :class="'mdi ' + skill.iconClass"></i>
               {{ skill.name }}
             </div>
@@ -487,6 +495,10 @@ export default {
           : "light";
       return preferredThemeMode === "dark" ? "dark" : "light";
     },
+
+    openWindow(href) {
+      if (href) window.open(href, "_blank");
+    },
   },
   created() {
     this.setResumeData(this.$route);
@@ -507,8 +519,6 @@ export default {
   display: flex;
   position: relative;
   min-height: 100vh;
-  color: var(--theme-text-color);
-  transition: color @transition-timeperiod ease-out;
   font-family: "Noto Sans SC", "PingFang SC", "San Francisco", "Microsoft Yahei",
     "Heiti SC", Helvetica, Tahoma, Arial, sans-serif;
 }
@@ -552,8 +562,10 @@ export default {
 
 .right-column {
   flex: 3;
+
   background-color: var(--theme-background-color);
-  transition: background-color @transition-timeperiod ease-out;
+  color: var(--theme-text-color) !important;
+  transition: all @transition-timeperiod ease-out;
 
   display: block;
   column-count: 2;
@@ -654,11 +666,13 @@ a {
     display: block;
     margin-bottom: 0.8rem;
     break-inside: avoid;
+    cursor: pointer;
 
     &-grid {
       flex: 0 0 100%;
       margin-bottom: 10px;
       break-inside: avoid;
+      cursor: pointer;
     }
   }
 
@@ -724,6 +738,7 @@ a {
 
 .squarred-grid-item {
   display: inline-block;
+  cursor: pointer;
 
   border: 1px solid @accent-color;
   border-radius: 4px;
@@ -739,7 +754,6 @@ a {
   transition: all @transition-timeperiod ease-out;
 
   &:hover {
-    cursor: default;
     background-color: transparent;
     color: @accent-color;
   }
@@ -817,6 +831,10 @@ a {
     color: rgba(0, 0, 0, 0.87);
     background-color: #e0e0e0;
   }
+}
+
+.un-clickable {
+  cursor: default !important;
 }
 
 @media (max-width: 960px) {
