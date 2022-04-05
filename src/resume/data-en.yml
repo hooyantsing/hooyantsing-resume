@@ -3,8 +3,8 @@ name:
   first: JingShen
   middle:
   last: Song
-about: Responsible for and completed the full-stack development of 2 projects, and was responsible for or participated in the front-end development and design of multiple projects.
-position: way to be Software Full Stack Developer
+about: Responsible for and completed the full-stack development of some projects, and was responsible for or participated in the front-end development and design of multiple projects.
+position: on the way to be Software Full Stack Developer
 
 contact:
   city: Chengdu
@@ -17,9 +17,13 @@ education:
 
 welfare: Participated in education support and other public welfare activities; usually acted as the team leader in projects, with good overall planning, cooperation and communication skills.
 
-schoolwork: Current GPA is 3.61, has passed CET-4 and CET-6, and won scholarships in both the first and second academic years.
+schoolwork: Current GPA is 3.61, has passed CET-4 and CET-6, and won scholarships in every academic year.
 
 experience:
+- company: Alibaba
+  position: Front-end Development Engineer
+  description: 
+
 - company: Huawei
   position: Cloud Computing Development Engineer
   description: Storage business infrastructure project group, container platform group; responsible for refactoring and developing CDBI, building and deploying multiple independent verification environments, writing scripts, and writing several blogs; awarded as Star of Huawei Storage (top 20%)

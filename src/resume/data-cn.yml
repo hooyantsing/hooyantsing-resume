@@ -3,8 +3,8 @@ name:
   first: 宋
   middle:
   last: 璟珅
-about: 作为主力完成了 2 个项目的全栈开发，负责或参与多个项目的前端开发设计。
-position: 想要成为软件全栈开发工程师
+about: 作为主力完成了若干项目的全栈开发，负责或参与多个项目的前端开发设计。
+position: 正在成为软件全栈开发工程师
 
 contact:
   city: 成都
@@ -17,9 +17,13 @@ education:
 
 welfare: 参加过支教等公益项目；开发中通常担当项目组长，具有不错的统筹安排、合作沟通能力。
 
-schoolwork: 当前 GPA 为 3.61，已通过 CET-4 和 CET-6，在第一和第二学年均获得奖学金。
+schoolwork: 当前 GPA 为 3.61，已通过 CET-4 和 CET-6，在所有学年均获得校级奖学金。
 
 experience:
+- company: 阿里巴巴
+  position: 前端开发工程师
+  description: 
+
 - company: 华为成都研究所
   position: 云计算开发工程师
   description: 存储业务基础设施项目群，容器平台组。重构开发 CDBI，搭建部署独立验证环境，编写部署脚本，撰写十余篇文档博客。获评优秀华储星（前 20%）

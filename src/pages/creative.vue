@@ -498,6 +498,8 @@ export default {
 </script>
 
 <style lang="less">
+@import (css)
+  url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&display=swap");
 @accent-color: #0a7074;
 @transition-timeperiod: 0.3s;
 
@@ -507,6 +509,8 @@ export default {
   min-height: 100vh;
   color: var(--theme-text-color);
   transition: color @transition-timeperiod ease-out;
+  font-family: "Noto Sans SC", "PingFang SC", "San Francisco", "Microsoft Yahei",
+    "Heiti SC", Helvetica, Tahoma, Arial, sans-serif;
 }
 
 .left-column {
@@ -621,7 +625,7 @@ a {
 
   &-name {
     font-size: 1.3em;
-    font-weight: 700;
+    font-weight: 500;
   }
 }
 
@@ -637,18 +641,18 @@ a {
   color: var(--theme-section-title-color);
   transition: color @transition-timeperiod ease-out;
   display: inline-block;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.2em;
   margin-left: 5px;
 }
 
 .section-content {
-  margin-top: 10px;
+  margin-top: 0.6rem;
   padding-left: 32px;
 
   &__item {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 0.8rem;
     break-inside: avoid;
 
     &-grid {
@@ -674,6 +678,7 @@ a {
 
   &__header {
     display: block;
+    margin-bottom: 0.2em;
 
     font-size: 1.1em;
     font-weight: 500;
@@ -681,6 +686,10 @@ a {
     &-flex {
       display: flex;
       align-items: center;
+    }
+
+    > .chip {
+      font-weight: 400;
     }
   }
 
@@ -723,7 +732,7 @@ a {
   color: white;
 
   margin-top: 5px;
-  padding: 5px;
+  padding: 0.3rem 0.6rem;
 
   vertical-align: middle;
 
@@ -737,8 +746,7 @@ a {
 }
 
 .section {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 1.2rem;
 }
 
 .lang-icon {
@@ -800,7 +808,7 @@ a {
   color: white;
   background-color: @accent-color;
   vertical-align: middle;
-  padding: 5px;
+  padding: 0 0.6em;
   margin-left: 5px;
   border-radius: 4px;
   font-size: 0.8em;
