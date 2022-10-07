@@ -3,7 +3,7 @@ name:
   first: JingShen
   middle:
   last: Song
-about: Responsible for and completed the full-stack development of some projects, and was responsible for or participated in the front-end development and design of multiple projects.
+about: 
 position: on the way to be Software Full Stack Developer
 
 contact:
@@ -15,14 +15,17 @@ education:
   degree: Bachelor of Engineering
   major: Software Engineering (Internet Plus)
 
-welfare: Participated in education support and other public welfare activities; usually acted as the team leader in projects, with good overall planning, cooperation and communication skills.
-
-schoolwork: Current GPA is 3.61, has passed CET-4 and CET-6, and won scholarships in every academic year.
+schoolwork: Responsible for and completed the full-stack development of some projects, and was responsible for or participated in the front-end development and design of multiple projects. Participated in education support and other public welfare activities; usually acted as the team leader in projects, with good overall planning, cooperation and communication skills. Has passed CET-4 and CET-6, and won scholarships in every academic year.
 
 experience:
 - company: Alibaba
   position: Front-end Development Engineer
-  description: 
+  timeperiod: From 2022.07
+  description: Alibaba Cloud - GTS
+
+- company: Alibaba
+  position: Front-end Development Engineer
+  description: Alibaba Cloud - GTS - X
 
 - company: Huawei
   position: Cloud Computing Development Engineer
@@ -41,11 +44,11 @@ projects:
 - shortIntro: 「Ivory Tower Timetable」
   description: A WeChat Mini Program for Collaborative To-Do Affairs for College Students Driven by the Curriculum. Join the class, share the schedule, to-do affairs and public affairs with your classmates. Front-end
 
-- shortIntro: IPTV front-end of UESTC
-  description: Provide IPTV services to students on campus. Based on tvly/tvly-web and uestclug/uestc-tvly-web, using React refactoring. Front-end, under development
+# - shortIntro: IPTV front-end of UESTC
+#   description: Provide IPTV services to students on campus. Based on tvly/tvly-web and uestclug/uestc-tvly-web, using React refactoring. Front-end, under development
 
-- shortIntro: Laboratory project deployment system
-  description:  Provide a unified platform and writing templates, standardize input and output, to display laboratory development results visually. Full stack, under development
+# - shortIntro: Laboratory project deployment system
+#   description:  Provide a unified platform and writing templates, standardize input and output, to display laboratory development results visually. Full stack, under development
 
 contributions:
 - shortIntro: A modern Hexo blog theme
@@ -58,6 +61,8 @@ contributions:
   description: Front-end design of 「About Us」 and 「Sub-venue」 pages
 
 awards:
+- name: Alibaba Cloud Certified Professional - Cloud Computing
+
 - name: 2021 中国高校计算机大赛网络技术挑战赛
   award: First Prize in Southwest Division
   grade: Provincial level

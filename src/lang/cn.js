@@ -10,7 +10,7 @@ const lang = {
   projects: "项目经历",
   contributions: "开源贡献",
   about: "自我介绍",
-  awards: "获奖经历",
+  awards: "获奖 / 证书",
   internship: "实习",
   underDev: "开发中",
   translate: "English resume",

@@ -9,7 +9,7 @@ const lang = {
   projects: "Projects",
   contributions: "Contributions",
   about: "About me",
-  awards: "Awards",
+  awards: "Awards / Certificates",
   internship: "INTERNSHIP",
   underDev: "DEV",
   translate: "中文简历",

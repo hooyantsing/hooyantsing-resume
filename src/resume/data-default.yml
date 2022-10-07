@@ -6,16 +6,19 @@ contact:
   github: LolipopJ
 
 experience:
-- timeperiod: 2022.02 - 2022.04
+- website: https://www.alibabagroup.com
+  internship: false
+
+- timeperiod: 2022.02 — 2022.04
   website: https://www.alibabagroup.com
   internship: true
 
-- timeperiod: 2021.01 - 2021.07
+- timeperiod: 2021.01 — 2021.07
   website: https://www.huawei.com
   internship: true
 
 education:
-- timeperiod: 2018.09 - 2022.06
+- timeperiod: 2018.09 — 2022.06
   website: https://www.uestc.edu.cn
 
 projects:
@@ -34,14 +37,14 @@ projects:
   platform: WXML
   url: https://github.com/UESTC-cantdoit/wxapp-ivory-tower-timetable
 
-- name: tvly-react
-  platform: React
-  url: https://github.com/LolipopJ/tvly-react
-  dev: true
+# - name: tvly-react
+#   platform: React
+#   url: https://github.com/LolipopJ/tvly-react
+#   dev: true
 
-- name: lab-code-deployment-system
-  platform: Vue
-  dev: true
+# - name: lab-code-deployment-system
+#   platform: Vue
+#   dev: true
 
 contributions:
 - name: hexo-theme-archer
@@ -56,6 +59,8 @@ contributions:
   platform: Vue
 
 awards:
+- url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2022阿里巴巴ACP认证.png
+
 - url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2021网络技术挑战赛.jpg
 
 - url: https://cdn.jsdelivr.net/gh/lolipopj/resume/public/awards/2021中国大学生服务外包创新创业大赛.jpg
@@ -66,12 +71,12 @@ awards:
 
 skills:
 - name: React
-  level: 75
+  level: 85
   iconClass: mdi-react
   url: https://reactjs.org
 
 - name: Vue
-  level: 75
+  level: 70
   iconClass: mdi-vuejs
   url: https://vuejs.org
 

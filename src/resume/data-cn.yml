@@ -3,7 +3,7 @@ name:
   first: 宋
   middle:
   last: 璟珅
-about: 作为主力完成了若干项目的全栈开发，负责或参与多个项目的前端开发设计。
+about: 
 position: 正在成为软件全栈开发工程师
 
 contact:
@@ -15,14 +15,17 @@ education:
   degree: 工学学士
   major: 软件工程（互联网“+”）
 
-welfare: 参加过支教等公益项目；开发中通常担当项目组长，具有不错的统筹安排、合作沟通能力。
-
-schoolwork: 当前 GPA 为 3.61，已通过 CET-4 和 CET-6，在所有学年均获得校级奖学金。
+schoolwork: 大学期间作为主力完成了若干项目的全栈开发，负责或参与多个项目的前端开发设计。参加过支教等公益项目；开发中通常担当项目组长，具有不错的统筹安排、合作沟通能力。通过 CET-4 和 CET-6，在所有学年均获得校级奖学金。
 
 experience:
 - company: 阿里巴巴
   position: 前端开发工程师
-  description: 
+  timeperiod: 2022.07 — 今
+  description: 阿里云智能 - 全球技术服务部
+
+- company: 阿里巴巴
+  position: 前端开发工程师
+  description: 阿里云智能 - 全球技术服务部 - X 组
 
 - company: 华为成都研究所
   position: 云计算开发工程师
@@ -41,11 +44,11 @@ projects:
 - shortIntro: 「象牙塔课程表」
   description: 由课程表驱动的大学生协作待办事务微信小程序。加入班级后，与同班同学共享课程表、课程待办事务和班级公共事务。前端开发
 
-- shortIntro: 电子科技大学 IPTV 前端
-  description: 面向校内同学提供 IPTV 服务。基于 tvly/tvly-web 和 uestclug/uestc-tvly-web，使用 React 重构。前端开发中
+# - shortIntro: 电子科技大学 IPTV 前端
+#   description: 面向校内同学提供 IPTV 服务。基于 tvly/tvly-web 和 uestclug/uestc-tvly-web，使用 React 重构。前端开发中
 
-- shortIntro: 实验室项目部署系统
-  description: 提供统一的展示平台和编写模板，标准化输入和输出，将实验室开发成果可视化地展现出来。全栈开发中
+# - shortIntro: 实验室项目部署系统
+#   description: 提供统一的展示平台和编写模板，标准化输入和输出，将实验室开发成果可视化地展现出来。全栈开发中
 
 contributions:
 - shortIntro: 一款现代的 Hexo 博客主题
@@ -58,6 +61,8 @@ contributions:
   description: 负责「关于我们」和「分会场」页面前端设计
 
 awards:
+- name: 阿里云云计算工程师 ACP 认证
+
 - name: 2021 年中国高校计算机大赛网络技术挑战赛
   award: 西南赛区一等奖
   grade: 省区级
