@@ -62,7 +62,7 @@ contributions:
   shortIntro: 一个可扩展的Java网络爬虫框架
   platform: Java
   url: https://github.com/code4craft/webmagic
-  description: 贡献 webmagic-saxon 组件源码，解决了 Xsoup 依赖不支持 Xpath2.0 的问题
+  description: 贡献 webmagic-saxon 组件源码，解决 Xsoup 依赖不支持 Xpath2.0 的问题
 
 awards:
 - name: ApsaraClouder基础技能认证-阿里巴巴编码规范
@@ -80,6 +80,24 @@ awards:
 - name: 湖南工学院第十四届计算机科技文化节系列活动之网页设计大赛
   award: 二等奖
   grade: 校级
+
+skills:
+  - name: SpringBoot
+  - name: SpringWeb
+  - name: SpringSecurity
+  - name: SpringData
+  - name: SpringCloudNetflix
+  - name: SpringCloudAlibaba
+  - name: Zookeeper
+  - name: Dubbo
+  - name: Mybatis
+  - name: Hibernate
+  - name: RocketMQ
+  - name: MySQL
+  - name: Redis
+  - name: Git
+  - name: SVN
+  - name: Docker
 
 lang: cn
 `
