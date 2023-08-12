@@ -3,7 +3,7 @@
     <div class="left-column">
       <div class="headline-photo">
         <img
-          src="https://cdn.jsdelivr.net/gh/lolipopj/resume/public/photo.jpg"
+          src="photo.jpg"
           class="headline-photo-img"
           alt="Absolutely myself"
         />
@@ -42,19 +42,19 @@
         </div>
 
         <div class="social-container">
-          <a :href="contactLinks.email" class="block-marged left-column-items">
-            <i class="fas fa-envelope contact-icon"></i>
-            <span class="txt-full-white">
-              {{ person.contact.email }}
-            </span>
-          </a>
-
           <div class="block-marged left-column-items">
             <i class="fas fa-phone-alt contact-icon"></i>
             <span class="txt-full-white">
               {{ person.contact.phone }}
             </span>
           </div>
+
+          <a :href="contactLinks.email" class="block-marged left-column-items">
+            <i class="fas fa-envelope contact-icon"></i>
+            <span class="txt-full-white">
+              {{ person.contact.email }}
+            </span>
+          </a>
 
           <a
             v-if="person.contact.website"
