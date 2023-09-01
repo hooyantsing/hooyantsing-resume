@@ -184,13 +184,13 @@
             @click="openWindow(experience.website)"
           >
             <div class="section-content__header section-content__header-flex">
-              {{ experience.position }}
+              {{ experience.company }}
               <span v-if="experience.internship" class="chip chip-secondary">
                 {{ lang.internship }}
               </span>
             </div>
             <div class="section-content__subheader">
-              {{ experience.company }}
+              {{ experience.position }}
             </div>
             <div class="section-content__text">
               {{ experience.timeperiod }}

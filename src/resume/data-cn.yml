@@ -4,7 +4,9 @@ name:
   middle:
   last: 燕卿
 about: 
-position: Java 后端工程师
+position: Java 开发工程师
+
+schoolwork: 大学期间作为主力完成了若干项目的后端开发，参与多个项目的前端设计；开发中通常担当项目组长，具有不错的统筹安排、合作沟通能力。参加过青年志愿者协会公益团体，担任网编部部长一职。
 
 contact:
   city: 北京
@@ -21,14 +23,12 @@ education:
   major: 网络工程
   timeperiod: 2017.09 — 2021.06
 
-schoolwork: 大学期间作为主力完成了若干项目的后端开发，参与多个项目的前端设计；开发中通常担当项目组长，具有不错的统筹安排、合作沟通能力。参加过青年志愿者协会公益团体，担任网编部部长一职。
-
 experience:
 - company: 东信北邮
   website: https://www.e-byte.com
   position: 项目研发工程师
   internship: false
-  timeperiod: 2022.04 — 2023.9
+  timeperiod: 2022.04 — 2023.09
   description: 「分布式数据采集平台」和「头雁政企」项目开发
 
 projects:
@@ -45,7 +45,7 @@ projects:
 - name: hnit-accoj
   shortIntro: 陌上实训-会计学实训
   url: https://accoj.hnit.edu.cn
-  description: 在校期间计算机学院与经管学院合作项目，实现的一套在线做题系统，帮助授课教师更高效地布置作业和评判学生成绩
+  description: 在校期间计算机学院与经管学院合作项目，实现的一套在线做题系统，帮助授课教师更高效的布置作业和评判学生成绩
 
 contributions:
 - name: npk-api
